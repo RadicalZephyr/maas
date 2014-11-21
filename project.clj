@@ -4,6 +4,13 @@
   :license {:name "Eclipse Public License v1.0"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.4.0"]
+
+                 ;; Web app dependencies
+                 [compojure "1.1.8"]
+                 [ring/ring-jetty-adapter "1.2.2"]
+                 [environ "0.5.0"]
+
+                 ;; Pallet dependencies
                  [com.palletops/pallet "0.8.0-RC.9"]
                  [com.palletops/pallet-vmfest "0.4.0-alpha.1"]
                  [com.palletops/pallet-jclouds "1.7.3"]
@@ -17,6 +24,7 @@
                   :exclusions [org.slf4j/slf4j-api]]
                  [org.apache.jclouds.driver/jclouds-sshj "1.7.2"]
                  [ch.qos.logback/logback-classic "1.0.9"]]
+
   :min-lein-version "2.0.0"
   :plugins [[environ/environ.lein "0.2.1"]]
   :hooks   [environ.leiningen.hooks]
