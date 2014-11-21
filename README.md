@@ -14,7 +14,10 @@ it.
 
 MAAS can handle storing and loading saved games too, in case you don't
 want to start from scratch every time. There are several different
-ways to handle this.
+ways to handle this. For information about how save game support is
+implemented check out the [docs page][savedocs].
+
+[savedocs]: https://www.github.com/RadicalZephyr/maas/blob/master/docs/add-ons.md
 
 
 ### Local File Upload -TODO
