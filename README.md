@@ -1,5 +1,7 @@
 # MAAS - Minecraft as a Service
 
+## Notice, this document is currently a giant TODO list, nothing is actually implemented yet.
+
 MAAS is a simple web application to assist you in launching a
 Minecraft server On-Demand. It sets up an [EC2] instance with the
 necessary software to run a Minecraft server, optionally pre-loads it
