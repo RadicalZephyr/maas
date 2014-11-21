@@ -2,6 +2,7 @@
     "Node defintions for maas"
     (:require
      [pallet.api :refer [group-spec server-spec node-spec plan-fn]]
+     [pallet.compute :refer [instantiate-provider]]
      [pallet.crate.automated-admin-user :refer [automated-admin-user]]
      [pallet.crate.java :as java]
      [environ.core :refer [env]]))
@@ -44,3 +45,10 @@
              maas-server
              (java/server-spec {})]
    :node-spec default-node-spec))
+
+(def ^{:doc "Defines the AWS EC2 service provider using secrets from environment variables."}
+  service
+  (instantiate-provider
+   "aws-ec2"
+   :identity aws-id
+   :credential aws-key))
