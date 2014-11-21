@@ -67,10 +67,13 @@ a constant cost, even when not in use.
 
 ## Usage
 
-Run this app locally with `lein run` or deploy it to [Heroku][heroku],
-then hit `Launch Server` on the main index. It will tell you what the
-IP address of your new minecraft server is.
+Run this app locally with `lein run` (you'll need to install
+[Leiningen] first) or deploy it to [Heroku][heroku],
+then hit `Launch Server` on the main page. Once the server has been
+created and fully set up, the page will tell you what the IP address
+of your new Minecraft server is.
 
+[Leiningen]: http://www.leiningen.com
 [heroku]: http://www.heroku.com
 
 
