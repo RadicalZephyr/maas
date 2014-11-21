@@ -2,7 +2,12 @@
     "Node defintions for maas"
     (:require
      [pallet.api :refer [group-spec server-spec node-spec plan-fn]]
-     [pallet.crate.automated-admin-user :refer [automated-admin-user]]))
+     [pallet.crate.automated-admin-user :refer [automated-admin-user]]
+     [environ.core :refer [env]]))
+
+(def aws-id  (env :aws-id))
+
+(def aws-key (env :aws-key))
 
 (def default-node-spec
   (node-spec
