@@ -3,6 +3,7 @@
     (:require
      [pallet.api :refer [group-spec server-spec node-spec plan-fn]]
      [pallet.crate.automated-admin-user :refer [automated-admin-user]]
+     [pallet.crate.java :as java]
      [environ.core :refer [env]]))
 
 (def aws-id  (env :aws-id))
@@ -35,5 +36,7 @@
   maas
   (group-spec
    "maas"
-   :extends [base-server maas-server]
+   :extends [base-server
+             maas-server
+             (java/server-spec {})]
    :node-spec default-node-spec))

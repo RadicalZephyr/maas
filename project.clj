@@ -14,6 +14,10 @@
                  [com.palletops/pallet "0.8.0-RC.9"]
                  [com.palletops/pallet-vmfest "0.4.0-alpha.1"]
                  [com.palletops/pallet-jclouds "1.7.3"]
+
+                 ;; Pallet Crate dependencies
+                 [com.palletops/java-crate "0.8.0-beta.6"]
+
                  ;; To get started we include all jclouds compute providers.
                  ;; You may wish to replace this with the specific jclouds
                  ;; providers you use, to reduce dependency sizes.
