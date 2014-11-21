@@ -60,6 +60,14 @@ method is also correspondingly more expensive since the EBS volume is
 a constant cost, even when not in use.
 
 
+## Add-ons - TODO
+
+MAAS can also automatically install and activate certain 3rd party
+Minecraft extensions/add-ons or supporting programs. Check out the
+[supported add-ons][addons] in the documentation.
+
+[addons]: https://www.github.com/RadicalZephyr/maas/blob/master/docs/add-ons.md
+
 ## Requirements
 
 - [AWS] Credentials
