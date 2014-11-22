@@ -14,7 +14,7 @@
 (def default-node-spec
   (node-spec
    :image {:os-family :ubuntu
-           :os-version-matches "14.04"
+           ;; :os-version-matches "14.04"
            :os-64-bit true}
    :hardware {:min-cores 1}
    :network  {:incoming-ports [22
