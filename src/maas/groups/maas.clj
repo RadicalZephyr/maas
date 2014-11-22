@@ -1,6 +1,7 @@
 (ns maas.groups.maas
     "Node defintions for maas"
     (:require
+     [maas.crate.minecraft :refer [minecraft]]
      [pallet.api :refer [group-spec server-spec node-spec plan-fn]]
      [pallet.compute :refer [instantiate-provider]]
      [pallet.crate.automated-admin-user :refer [automated-admin-user]]
@@ -33,8 +34,7 @@
   (server-spec
    :phases
    {:configure (plan-fn
-                 ;; Add your crate class here
-                 )}))
+                (minecraft))}))
 
 (def
   ^{:doc "Defines a group spec that can be passed to converge or lift."}
