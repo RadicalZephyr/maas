@@ -48,7 +48,8 @@
 
 (def ^{:doc "Defines the AWS EC2 service provider using secrets from environment variables."}
   service
-  (instantiate-provider
-   "aws-ec2"
-   :identity aws-id
-   :credential aws-key))
+  (future
+    (instantiate-provider
+     "aws-ec2"
+     :identity aws-id
+     :credential aws-key)))
