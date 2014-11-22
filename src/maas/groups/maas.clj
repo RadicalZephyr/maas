@@ -7,9 +7,9 @@
      [pallet.crate.java :as java]
      [environ.core :refer [env]]))
 
-(def aws-id  (env :aws-id))
+(def aws-id  (env :aws-id ""))
 
-(def aws-key (env :aws-key))
+(def aws-key (env :aws-key ""))
 
 (def default-node-spec
   (node-spec
