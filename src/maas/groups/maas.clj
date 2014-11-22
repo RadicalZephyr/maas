@@ -1,12 +1,14 @@
 (ns maas.groups.maas
     "Node defintions for maas"
     (:require
-     [maas.crate.minecraft :refer [minecraft]]
+     [environ.core :refer [env]]
+
      [pallet.api :refer [group-spec server-spec node-spec plan-fn]]
      [pallet.compute :refer [instantiate-provider]]
      [pallet.crate.automated-admin-user :refer [automated-admin-user]]
-     [pallet.crate.java :as java]
-     [environ.core :refer [env]]))
+
+     [maas.crate.minecraft :as mc]
+     [pallet.crate.java :as java]))
 
 (def aws-id  (env :aws-id ""))
 
@@ -34,7 +36,7 @@
   (server-spec
    :phases
    {:configure (plan-fn
-                (minecraft))}))
+                (mc/minecraft))}))
 
 (def
   ^{:doc "Defines a group spec that can be passed to converge or lift."}
