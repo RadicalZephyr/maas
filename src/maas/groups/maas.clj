@@ -45,7 +45,9 @@
    "maas"
    :extends [base-server
              maas-server
-             (java/server-spec {})]
+             (java/server-spec {:vendor     :openjdk
+                                :components #{:jre}
+                                :version    "7"})]
    :node-spec default-node-spec))
 
 (def ^{:doc "Defines the AWS EC2 service provider using secrets from environment variables."}
