@@ -49,9 +49,11 @@
    :node-spec default-node-spec))
 
 (def ^{:doc "Defines the AWS EC2 service provider using secrets from environment variables."}
-  service
+  aws-ec2
   (future
     (instantiate-provider
      "aws-ec2"
      :identity aws-id
      :credential aws-key)))
+
+(def vmfest (instantiate-provider "vmfest"))
