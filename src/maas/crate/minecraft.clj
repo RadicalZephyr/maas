@@ -3,6 +3,7 @@
             [pallet.actions :refer [user
                                     group
                                     directory
+                                    fifo
                                     remote-file]]
             [pallet.crate :refer [defplan]]))
 
