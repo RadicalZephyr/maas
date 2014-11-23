@@ -5,6 +5,7 @@
                                     directory
                                     fifo
                                     remote-file
+                                    service
                                     service-script]]
             [pallet.crate :refer [defplan]]))
 
@@ -75,8 +76,11 @@
   ;; Install the minecraft service script
   (service-script "minecraft"
                   :action :create
+                  :service-impl :upstart
                   :content minecraft-service)
-  )
+  (service "minecraft"
+           :action :start
+           :service-impl :upstart))
 
 
 ;; java -Xmx1024M -Xms1024M -jar minecraft_server.jar nogui
