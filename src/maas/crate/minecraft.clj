@@ -1,6 +1,8 @@
 (ns maas.crate.minecraft
   (:require [clojure.java.io :refer [file]]
-            [pallet.actions :refer [directory
+            [pallet.actions :refer [user
+                                    group
+                                    directory
                                     remote-file]]
             [pallet.crate :refer [defplan]]))
 
