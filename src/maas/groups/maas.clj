@@ -20,8 +20,8 @@
            :os-version-matches "14.04"
            :os-64-bit true}
    :hardware {:min-cores 1}
-   :network  {:incoming-ports [22
-                               25565]}))
+   :network  {:inbound-ports [22
+                              25565]}))
 
 (def
   ^{:doc "Defines the type of node maas will run on"}
