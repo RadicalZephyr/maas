@@ -59,3 +59,17 @@
      :credential aws-key)))
 
 (def vmfest (instantiate-provider "vmfest"))
+
+;; (require '[vmfest.manager :as vmm])
+;; (require '[vmfest.virtualbox.image :refer [setup-model]])
+
+;; (def my-server (vmm/server))
+
+;; (setup-model "https://vagrantcloud.com/ubuntu/boxes/trusty64/versions/1/providers/virtualbox.box"
+;;              my-server
+;;              :meta {:os-family :ubuntu
+;;                     :os-version "14.04"
+;;                     :os-64-bit true})
+
+;; (setup-model "http://files.vagrantup.com/lucid64.box" my-server
+;;              :meta {:os-family :ubuntu :os-version "10.04" :os-64-bit true})
