@@ -19,9 +19,22 @@
 (def world-folder (with-root "world"))
 
 (defplan minecraft []
+  ;; First create a minecraft user and group
+  (user "minecraft"
+        :action :create
+        :shell :false
+        :create-home false
+        :system true
+        :home root-folder)
+  (group "minecraft"
+         :system true)
+
   (directory root-folder
              :action :create
-             :path   true)
+             :path   true
+             :owner "minecraft"
+             :group "minecraft")
+
   (remote-file server-jar
                :url server-jar-url)
 
@@ -29,6 +42,8 @@
   (remote-file eula-file :content "eula=true")
 
   ;; Setup the world folder
+
+  ;; Start the minecraft server
 
   )
 
