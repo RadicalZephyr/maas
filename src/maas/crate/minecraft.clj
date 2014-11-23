@@ -42,22 +42,26 @@
        "<" server-input " >" server-log "\n"
        ))
 
+(def username "minecraft")
+(def groupname "minecraft")
+(def servicename "minecraft")
+
 (defplan minecraft []
   ;; First create a minecraft user and group
-  (user "minecraft"
+  (user username
         :action :create
         :shell :false
         :create-home false
         :system true
         :home root-folder)
-  (group "minecraft"
+  (group groupname
          :system true)
 
   (directory root-folder
              :action :create
              :path   true
-             :owner "minecraft"
-             :group "minecraft")
+             :owner username
+             :group groupname)
 
   (remote-file server-jar
                :url server-jar-url)
@@ -70,15 +74,15 @@
   ;; Create the FIFO's for communicating with the server
   (fifo server-input
         :action :create
-        :owner "minecraft"
-        :group "minecraft")
+        :owner username
+        :group groupname)
 
   ;; Install the minecraft service script
-  (service-script "minecraft"
+  (service-script servicename
                   :action :create
                   :service-impl :upstart
                   :content minecraft-service)
-  (service "minecraft"
+  (service servicename
            :action :start
            :service-impl :upstart))
 
