@@ -21,8 +21,7 @@
 
 (def world-folder (with-root "world"))
 
-(def server-fifos [(with-root "server-input")
-                   (with-root "server-output")])
+(def server-input (with-root "server-input"))
 
 (defplan minecraft []
   ;; First create a minecraft user and group
@@ -50,12 +49,10 @@
   ;; Setup the world folder
 
   ;; Create the FIFO's for communicating with the server
-  (map (fn [fname]
-         (fifo fname
-               :action :create
-               :owner "minecraft"
-               :group "minecraft"))
-       server-fifos)
+  (fifo server-input
+        :action :create
+        :owner "minecraft"
+        :group "minecraft")
   )
 
 
