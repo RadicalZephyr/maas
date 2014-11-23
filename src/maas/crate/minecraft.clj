@@ -4,7 +4,8 @@
                                     group
                                     directory
                                     fifo
-                                    remote-file]]
+                                    remote-file
+                                    service-script]]
             [pallet.crate :refer [defplan]]))
 
 (def root-folder "/var/minecraft")
@@ -22,6 +23,23 @@
 (def world-folder (with-root "world"))
 
 (def server-input (with-root "server-input"))
+
+(def server-log   (with-root "server.log"))
+
+(def minecraft-service
+  (str "# This is a simple upstart job for a minecraft server\n"
+       "\n"
+       "console log\n"
+       "chdir " root-folder "\n"
+       "setuid minecraft\n"
+       "setgid minecraft\n"
+       "\n"
+       "respawn\n"
+       "respawn limit 20 5\n"
+       "\n"
+       "exec java -Xms1536M -Xmx2048M -jar " server-jar " nogui "
+       "<" server-input " >" server-log "\n"
+       ))
 
 (defplan minecraft []
   ;; First create a minecraft user and group
@@ -53,6 +71,11 @@
         :action :create
         :owner "minecraft"
         :group "minecraft")
+
+  ;; Install the minecraft service script
+  (service-script "minecraft"
+                  :action :create
+                  :content minecraft-service)
   )
 
 
