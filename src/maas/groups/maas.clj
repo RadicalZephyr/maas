@@ -36,7 +36,8 @@
   (server-spec
    :phases
    {:configure (plan-fn
-                (mc/minecraft))}))
+                (mc/start-minecraft))
+    }))
 
 (def
   ^{:doc "Defines a group spec that can be passed to converge or lift."}

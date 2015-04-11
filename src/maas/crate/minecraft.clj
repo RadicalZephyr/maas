@@ -46,7 +46,7 @@
 (def groupname "minecraft")
 (def servicename "minecraft")
 
-(defplan minecraft []
+(defplan start-minecraft []
   ;; First create a minecraft user and group
   (user username
         :action :create
